@@ -56,7 +56,7 @@ router.put(
       .catch(error => next(error))
   }
 )
-      
+//      
 router.delete(
   '/event/:id',
   (request, response, next) => {
