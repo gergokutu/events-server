@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 4000
-const Event = require('./event/model')
+// const Event = require('./event/model')
 const router = require('./event/router')
 
 const corsMiddleware = cors()

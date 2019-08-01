@@ -4,7 +4,7 @@ const router = new Router()
 
 
 router.get(
-  '/event',
+  '/events',
   (request, response, next) => {
     Event.findAll()
       .then(listOfEvents => {
@@ -15,7 +15,7 @@ router.get(
 )
 
 router.post(
-  '/event',
+  '/events',
   (request, response, next) => {
     Event
       .findOne({ where: { name: request.body.name }})
@@ -33,7 +33,7 @@ router.post(
 )
 
 router.get(
-  '/event/:id',
+  '/events/:id',
   (request, response, next) => {
     Event.findByPk(request.params.id)
       .then((event) => response.send((event)))
@@ -42,7 +42,7 @@ router.get(
 )
 
 router.put(
-  '/event/:id',
+  '/events/:id',
   (request, response, next) => {
     Event
       .findByPk(request.params.id)
@@ -58,7 +58,7 @@ router.put(
 )
 //      
 router.delete(
-  '/event/:id',
+  '/events/:id',
   (request, response, next) => {
     Event
       .destroy({
