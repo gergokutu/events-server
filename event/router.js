@@ -14,6 +14,40 @@ router.get(
   }
 )
 
+// pagination
+// router.get(
+//   '/event',
+//   (req, res, next) => {
+//   const limit = req.query.limit || 25
+//   const offset = req.query.offset || 0
+//   Event
+//     .count()
+//     .then(total => {
+//       Event
+//         .findAll({ limit, offset })
+//         .then(events => res.send({ events, total }))
+//       })
+//     .catch(error => next(error))
+//   }
+// )
+
+// parallel Promises - pagination
+// router.get('/events', (req, res, next) => {
+//   const limit = req.query.limit || 25
+//   const offset = req.query.offset || 0
+
+//   Promise.all([
+//     Event.count(),
+//     Event.findAll({ limit, offset })
+//   ])
+//     .then(([total, events]) => {
+//       res.send({
+//         events, total
+//       })
+//     })
+//     .catch(error => next(error))
+// })
+
 router.post(
   '/events',
   (request, response, next) => {
